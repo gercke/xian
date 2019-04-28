@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>十三朝</title>
+    <link rel="stylesheet"type="text/css" href="stu.css">
+    <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.js"></script>
+    <style type="text/css">
+    body{
+      overflow: hidden;
+    }
+      #menu_wrap a:link,#menu_wrap a:visited{
+        color:gray
+    }
+    
+}
+#menu_wrap a:hover,#menu_wrap a:active{
+    color: white
+}
+#menu_text
+{
+    width: 80px;
+    height: 50px;
+    background-color: white;
+    outline: none;
+    position: absolute;
+    font-size: 23px;
+    font-family: fantasy;
+    border-radius: 5px;
+    top: 5px;
+    right: 0px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+#menu_wrap{
+    width: 15%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: -16%;
+    z-index: 100;
+    text-align: center;
+    transition: all 0.3s linear;
+}
+#menu_wrap img{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    margin-top: 10px;
+    float: right;
+    cursor: pointer;
+}
+#menu_wrap ul{
+    width: 70%;
+    margin: 0 auto; 
+    font-size: 20px;
+    list-style: none;
+}
+.ul_header{
+    width: 70%;
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px dotted rgba(128,128,128,0.5);
+}
+#menu_wrap li{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px dotted rgba(128,128,128,0.5);
+}
+#menu_text:hover{
+  box-shadow: -1px 1px 8px 2px black;
+}
+
+a{
+    text-decoration: none;
+}
+    </style>
+</head>
+<body>
+
+      <div class="all">
+          <div id="head">
+             <p>联系我们</p>
+          </div>
+          <div id="up">
+              <a href="../9朝/stu.html"><img src="../昔日长安/last.png" width="48px" height="48px"></a>
+          </div>
+          <form action="#" method="post" name="myform">
+          <div id="loading">
+              <div id="ming">
+                  <input id="xing" name="namee" type="text" placeholder="姓名" required>
+              </div>
+              <div id="tele">
+                  <input  id="tel" name="telephone" type="text" placeholder="电话" required pattern="^1[34578][0-9]{9}$">
+              </div>
+              <div id="post">
+                  <input id="you" name="email" type="email" placeholder="邮箱" required pattern="[a-zA-Z0-9]{3,30}@[a-zA-Z0-9]+\w*\.(com|cn|org|net">
+              </div>
+              <div id="think">
+                  <input id="want" name="thinks" type="text" placeholder="想说点什么" required>
+              </div>
+              <div id="sub">
+                  <input type="submit" id="suu" class="su" value="提交">
+              </div>
+          </div>
+          </form>
+      </div>
+      <div id="show"></div>
+      <button id="menu_text" onclick="menuAppear()">Menu</button>
+    <div id="menu_wrap">
+        <img src="../close.png"  onclick="menuDisappear()" alt="关闭">
+        <ul>
+            <div class="ul_header">
+                <a href="../index.html">首页</a>
+            </div>
+            <li><a href="../html/demo.html">长安之路</a></li>
+            <li><a href="../昔日长安/昔日长安.html">昔日长安</a></li>
+            <li><a href="../秦/秦.html">秦朝</a></li>
+            <li><a href="../西晋/index1.html">西晋</a></li>
+            <li><a href="../西魏/西魏.html">西魏</a></li>
+            <li><a href="../唐/唐朝.html">唐朝</a></li>
+            <li><a href="../9朝/stu.html">九朝</a></li>
+            <li><a href="../联系我们/index.html">联系我们</a></li>
+        </ul>
+    </div>
+      <!--<script type="text/javascript">-->
+          <!--$.fn.name()-->
+          <!--{-->
+              <!--$(function () {-->
+                  <!--$('.su').click(function () {-->
+                      <!--$('#show').fadeIn(1000).css({-->
+                          <!--'transform': 'rotate(0deg) scale(1)'-->
+                      <!--});-->
+                      <!--return false;-->
+                  <!--});-->
+                  <!--$(document).click(function () {-->
+                      <!--$('#show').fadeOut(1000).css({-->
+                          <!--'transform': 'rotateY(180deg) scale(0.1)'-->
+                      <!--});-->
+                  <!--});-->
+              <!--});-->
+          <!--}-->
+          <!--function getResult() {-->
+              <!--$.fn.name();-->
+          <!--}-->
+          <!--$(function(){-->
+              <!--$('.su').mouseover(function(){-->
+                  <!--find('submit').html()-->
+              <!--});-->
+          <!--});-->
+          <!--var a,b,c,d;-->
+          <!--$('.su').hover(function () {-->
+              <!--a = document.getElementById("xing").value;-->
+              <!--b = document.getElementById("tel").value;-->
+              <!--c = document.getElementById("you").value;-->
+              <!--d = document.getElementById("want").value;-->
+          <!--})-->
+          <!--if(a&&b&&c&&d) {-->
+              <!--getResult();-->
+          <!--}-->
+      <!--</script>-->
+      <script type="text/javascript">
+    function menuAppear(){
+        document.getElementById("menu_wrap").style.right="0px";
+    }
+    function menuDisappear(){
+        document.getElementById("menu_wrap").style.right="-16%";
+    }
+
+</script>
+  </body>
+</html>
