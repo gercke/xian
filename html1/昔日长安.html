@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>十三朝</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="xiri.css" type="text/css">
+</head>
+<body>
+    <div class="main">
+        <section>
+        <div id="d0">
+            <a href="../西晋/index1.html">
+                    <figure>
+                            <img src="z8.jpg" alt="1">
+                            <figcaption>
+                                <p>西晋</p>
+                                <p>神兽纹玉樽</p>
+                                <a href="#"><p>了解更多</p></a>
+                            </figcaption>
+                    </figure>
+            </a>
+        </div>
+        <div id="d1">
+            <a href="../秦/秦.html">
+                    <figure>
+                            <img src="z07.jpg" alt="2">
+                            <figcaption>
+                                <p>秦朝</p>
+                                <p>兵马俑</p>
+                                <p>了解更多</p>
+                            </figcaption>
+                            <div class="tu2bian"></div>
+                    </figure>
+            </a>
+        </div>
+        <div id="d2">  
+            <a href="../唐/唐朝.html">
+                    <figure>
+                            <img src="z10.jpg" alt="3">
+                            <figcaption>
+                            <p>唐朝</p>
+                            <p>月宫镜</p>
+                            <p>了解更多</p>
+                            </figcaption>
+                        </figure>
+            </a>
+        </div>
+        <div id="d3">
+            <a href="../西魏/西魏.html">
+                    <figure>
+                            <img src="z11.jpg" alt="4">
+                            <figcaption>
+                                <p>西魏</p>
+                                <p>玉鱼</p>
+                                <p>了解更多</p>
+                            </figcaption>
+                            <div class="tu2bian"></div>
+                    </figure>
+            </a>
+        </div>
+        </section>
+        <div class="last">
+            <a href="../html/demo.html">
+                <img src="last.png" alt="last">
+            </a>
+        </div>
+        <div class="next">
+            <a href="../秦/秦.html">
+                <img src="next.png" alt="next">
+            </a>
+        </div>
+    </div>
+    <button id="menu_text" onclick="menuAppear()">Menu</button>
+    <div id="menu_wrap">
+        <img src="../close.png" onclick="menuDisappear()" alt="关闭">
+        <ul>
+            <div class="ul_header">
+                <a href="../index.html">首页</a>
+            </div>
+            <li><a href="../html/demo.html">长安之路</a></li>
+            <li><a href="../昔日长安/昔日长安.html">昔日长安</a></li>
+            <li><a href="../秦/秦.html">秦朝</a></li>
+            <li><a href="../西晋/index1.html">西晋</a></li>
+            <li><a href="../西魏/西魏.html">西魏</a></li>
+            <li><a href="../唐/唐朝.html">唐朝</a></li>
+            <li><a href="../9朝/stu.html">九朝</a></li>
+            <li><a href="../联系我们/index.html">联系我们</a></li>
+        </ul>
+    </div>
+    
+    <script>
+        function rd(n,m){
+    var c = m - n + 1;  
+    return Math.floor(Math.random() * c + n);
+}
+    
+var w = parseInt($('section').width()),
+h = parseInt($('section').height());
+
+//     $('div').each(
+//         function() {
+//     var wh = rd(100, 150)
+//     $(this).css({
+//     width: wh,
+//     height: wh
+// })
+// })
+
+var d0 = parseInt($('#d0').width()),
+d1 = parseInt($('#d1').width()),
+d2 = parseInt($('#d2').width()),
+d3 = parseInt($('#d3').width());
+
+
+
+var a1 = rd(-(d0 / 4), w / 2 - d0),
+a2 = rd(0, h / 2 - d0 / 4 * 3);
+
+var b1 = rd(-(d1 / 4), w / 2 - d1),
+b2 = rd(-(d1 / 4), h / 2 - d1);
+
+var c1 = rd(0, w / 2 - d2 / 4 * 3),
+c2 = rd(-(d2 / 4), h / 2 - d2);    
+
+var e1 = rd(0, w / 2 - d3 / 4 * 3),
+e2 = rd(0, h / 2 - d3 / 4 * 3); 
+
+$('#d0').css('margin-right', a1 +'px')
+$('#d0').css('margin-bottom', a2 +'px')
+
+$('#d1').css('margin-left', b1 +'px')
+$('#d1').css('margin-bottom', b2 +'px')
+
+$('#d2').css('margin-right', c1 +'px')
+$('#d2').css('margin-top', c2 +'px')
+
+$('#d3').css('margin-left', e1 +'px')
+$('#d3').css('margin-top', e2 +'px')
+
+//菜单栏
+    function menuAppear(){
+        document.getElementById("menu_wrap").style.right="0px";
+    }
+    function menuDisappear(){
+        document.getElementById("menu_wrap").style.right="-16%";
+    }
+    </script>
+</body>
+</html>

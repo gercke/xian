@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>十三朝</title>
+    <link rel="stylesheet" type="text/css" href="index2.css">
+    <style>
+        body,html{
+            height: 100%;
+            margin: 0px;
+        }
+        #left{
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+        #right{
+          position: absolute;
+          right: 0;
+          bottom: 0;
+        }
+    </style>
+</head>
+<body>
+      <div class="wrap"></div>
+      <div class="wrap"></div>
+      <div class="wrap"></div>
+      <div class="wrap"></div>
+      <div class="content">
+          <ul>
+              <li class="list">
+                  <div class="text">
+                      <p class="textlist">唐朝</p>
+                  </div>
+              </li>
+              <li class="list">
+                  <div class="text">
+                      <p class="textlist">疆域</p>
+                  </div>
+              </li>
+              <li class="list">
+                  <div class="text">
+                      <p class="textlist">墨香</p>
+                  </div>
+              </li>
+              <li class="list">
+                  <div class="text">
+                      <p class="textlist">历史</p>
+                  </div>
+              </li>
+          </ul>
+      </div>
+      <div id="left">
+          <a href="../西魏/西魏.html"><img src="img1/last.png" width="48px" height="48px"></a>
+      </div>
+      <div id="right">
+          <a href="../9朝/stu.html"><img src="img1/next.png" width="48px" height="45px"></a>
+      </div>
+      <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.js"></script>
+      <script>
+          var li = $('.list');
+          li.click(function () {
+              var index = $(this).index();
+              $(this).stop().animate({
+                  width:"950px"
+              },500).siblings("li").stop().animate({
+                  width:"100px"
+              },500)
+              $(".wrap").eq(index).fadeIn().siblings(".wrap").fadeOut();
+          })
+      </script>
+</body>
+</html>

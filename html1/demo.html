@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>十三朝</title>
+
+<link rel="stylesheet" type="text/css" href="http://down.admin5.com/demo/code_pop/23/46/css/normalize.css" />
+<style type="text/css">
+body{
+	 background:url(images/封面背景.jpg);
+	 background-size:100% 100%;
+	 background-attachment:fixed;
+	 overflow: hidden;
+}
+
+	.timeline-container {
+  position: relative; }
+  .timeline-container::after {
+    content: '';
+    display: table;
+    clear: both; }
+
+.timeline {
+  width: 100%; }
+
+.timeline-list {
+  position: relative;
+  top: 60px;
+  left: -60px;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border-radius: 20px;
+  border: 8px solid pink; }
+
+.timeline-list-wrap {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  transform: translate3d(0, 0, 0);
+  transition: transform 1s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+
+.timeline-item {
+  float: left;
+  width: 800px;
+  height: 400px;
+ /* border: 1px solid #ddd;*/
+  box-sizing: border-box; 
+  
+position: relative;}
+
+.timeline-dots-wrap {
+  position: absolute;
+  bottom: 0;
+  width: 910px;
+  height: 60px;
+ /* border: 1px solid;*/
+background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  border-radius: 10px;
+  overflow: hidden; }
+  .timeline-dots-wrap.bottom {
+    bottom: -250px; 
+    margin-left: -60px;
+    border: 1px solid white;
+}
+  .timeline-dots-wrap.top {
+    top: -50px; }
+
+.timeline-dots {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url("../img/timeline-bg.png") bottom repeat-x;
+  transition: transform 1s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+  .timeline-dots li {
+    float: left;
+    width: 100px;
+    height: 60px;
+    transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    list-style: none;
+    text-align: center;
+    overflow: hidden; }
+    .timeline-dots li.slide-active button {      /*点击后*/
+    color: #2972ca;
+    font-size: 25px; 
+
+  }
+  .timeline-dots button {         /*点击前*/
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-color: white;
+    color: #333;
+    font-size: 20px;
+    padding-bottom: 20px;
+    background: url("") bottom no-repeat;
+    transition: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+
+.timeline-container {
+  width: 800px;
+  margin: 0 auto; }
+
+.timeline-list {
+  width: 900px;
+  height: 500px;
+ }
+
+.timeline-item {
+  width: 900px;
+  height: 500px;
+  padding: 10px;
+  border: 1px solid #ddd; }
+  .timeline-dots{
+  	margin-top: 16px;
+  }
+ .timeline-1 img{
+ 	border-radius: 10px;
+	width: 900px;
+  height: 500px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: 2s;
+}
+.iii p{
+	color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+	font-size: 20px;
+	background-image: -webkit-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+	background-image:  -webkit-linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+	background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+}
+.timeline-1 img:hover{
+	transform: scale(1.5);
+	opacity: 0.5
+}
+.bg{
+	background: black;
+}
+.nextpage{
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+#menu_wrap a:link,#menu_wrap a:visited{
+    color:gray
+}
+#menu_wrap a:hover,#menu_wrap a:active{
+    color: white
+}
+#menu_text
+{
+    width: 80px;
+    height: 50px;
+    background-color: white;
+    outline: none;
+    position: absolute;
+    font-size: 23px;
+    font-family: fantasy;
+    border-radius: 5px;
+    top: 5px;
+    right: 0px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+#menu_wrap{
+    width: 15%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: -16%;
+    z-index: 100;
+    text-align: center;
+    transition: all 0.3s linear;
+}
+#menu_wrap img{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    margin-top: 10px;
+    float: right;
+    cursor: pointer;
+}
+#menu_wrap ul{
+    width: 70%;
+    margin: 0 auto; 
+    font-size: 20px;
+    list-style: none;
+}
+.ul_header{
+    width: 70%;
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px dotted rgba(128,128,128,0.5);
+}
+#menu_wrap li{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px dotted rgba(128,128,128,0.5);
+}
+#menu_text:hover{
+	box-shadow: -1px 1px 8px 2px black;
+}
+.next img{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+.next:hover{
+    opacity: 0.4;
+}
+a{
+    text-decoration: none;
+}
+/*.ul_header p{
+    font-size: 23px;
+   display: inline-block;
+}*/
+.last{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.next:hover,.last:hover{
+  opacity: 0.4;
+}
+.title{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.title img{
+  transform: scale(1.5);
+}
+.titleup{
+  position: absolute;
+  left: 100px;
+  top: 150px;
+}
+.titledown{
+  position: absolute;
+  top: 500px;
+  left: 270px;
+
+}
+</style>
+
+</head>
+<body>
+<section class="section-list">
+	<div class="container">
+	  <div class="section-list-box">
+		<div class="timeline-container">
+		  <div class="timeline timeline-1">
+			<div data-time="西周" class="bg">
+				<a href="../9朝/stu.html"><img src="images\2N`7P{[H(UYYOWXAGYZG__M.png" alt=""></a>
+			</div>
+							<div data-time="大秦" class="bg">
+								<div class="timeline-visual">
+									<a href="../秦/秦.html"><img src="images\P75CM)X%_@N6@Z(6}(L7_ZQ.png" alt=""></a>
+								</div>
+							</div>
+							<div data-time="西汉" class="bg">
+								<div class="timeline-visual">
+									<a href="../9朝/stu.html"><img src="images\JD}_W9B3@CZH9_O[7924HS0.png" alt=""></a>
+								</div>
+								
+							</div>
+							<div data-time="新朝" class="bg">
+								<div class="timeline-visual">
+									<a href="../9朝/stu.html"><img src="images\arturo-castaneyra-396447-unsplash.jpg" alt=""></a>
+								</div>
+								
+							</div>
+							<div data-time="东汉" class="bg">
+								<div class="timeline-visual">
+									<a href="../9朝/stu.html"><img src="images\lantern-3713468_1280.jpg" alt=""></a>
+								</div>
+								
+							</div>
+							<div data-time="西晋" class="bg">
+								<div class="timeline-visual">
+									<a href="../西晋/index1.html"><img src="images\james-cai-52893-unsplash.jpg" alt=""></a>
+								</div>
+							</div>
+							<div data-time="前赵" class="bg">
+								<div class="timeline-visual">
+									<a href="../9朝/stu.html"><img src="images\perdana-kurniawan-arta-727838-unsplash.jpg" alt=""></a>
+								</div>
+							</div>
+							<div data-time="前秦" class="bg">
+								<div class="timeline-visual">
+									<a href="../9朝/stu.html"><img src="images\wood-door-1711004_1280.jpg" alt=""></a>
+								</div>
+								
+							</div>
+							<div data-time="后秦" class="bg">
+								<div class="timeline-visual">
+									<a href="../9朝/stu.html"><img src="十三朝\dynasty9.webp" alt=""></a>
+								</div>
+								
+							</div>
+							<div data-time="西魏" class="bg">
+								<div class="timeline-visual">
+									<a href="../西魏/西魏.html"><img src="十三朝\dynasty10.webp" alt=""></a>
+								</div>
+								
+							</div>
+							<div data-time="北周" class="bg">
+								<div class="timeline-visual">
+									<a href="../9朝/stu.html"><img src="十三朝\dynasty11.webp" alt=""></a>
+								</div>
+								
+							</div>
+							<div data-time="隋朝" class="bg">
+								<div class="timeline-visual">
+									<a href="../9朝/stu.html"><img src="images\melvin-tan-117400-unsplash.jpg" alt=""></a>
+								</div>
+								
+							</div>
+							<div data-time="唐朝" class="bg">
+								<div class="timeline-visual">
+									<a href="../唐/唐朝.html"><img src="images\yiran-li-1470070-unsplash.jpg" alt=""></a>
+								</div>
+								
+							</div>
+		  </div>
+		</div><!-- /.timeline-container -->
+	  </div><!-- /.section-list-box -->
+
+	</div>
+	<div style="width: 200px;height: 400px;"></div>
+	<div class="last">
+        
+        <a href="../index.html"><img src="../昔日长安/last.png"></a>
+  </div>
+  <div class="next">
+    <a href="../昔日长安/昔日长安.html"><img src="../next.png" alt="next"></a>
+  </div>
+	</a></div><!-- 需要连接陈柯的页面 -->
+	<button id="menu_text" onclick="menuAppear()">Menu</button>
+    <div id="menu_wrap">
+        <img src="../close.png" onclick="menuDisappear()" alt="关闭">
+        <ul>
+            <div class="ul_header">
+                <a href="../index.html">首页</a>
+            </div>
+            <li><a href="demo.html">长安之路</a></li>
+            <li><a href="../昔日长安/昔日长安.html">昔日长安</a></li>
+            <li><a href="../秦/秦.html">秦朝</a></li>
+            <li><a href="../西晋/index1.html">西晋</a></li>
+            <li><a href="../西魏/西魏.html">西魏</a></li>
+            <li><a href="../唐/唐朝.html">唐朝</a></li>
+            <li><a href="../9朝/stu.html">九朝</a></li>
+            <li><a href="../联系我们/index.html">联系我们</a></li>
+        </ul>
+    </div>
+<div class="title">
+  <div class="titleup">
+  <img src="title1.png">
+  </div>
+  <div class="titledown">
+    <img src="title2.png">
+  </div>
+</div>
+</section>
+
+<script src="http://down.admin5.com/demo/code_pop/23/46/js/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script src="http://down.admin5.com/demo/code_pop/23/46/dist/js/timeline.js" type="text/javascript"></script>
+<script type="text/javascript">
+    function menuAppear(){
+        document.getElementById("menu_wrap").style.right="0px";
+    }
+    function menuDisappear(){
+        document.getElementById("menu_wrap").style.right="-16%";
+    }
+
+</script>
+<script type="text/javascript">
+	$(function(){
+		// Demo 1
+		$('.timeline-1').Timeline();
+
+
+		// Demo 2
+		$('.timeline-2').Timeline({
+			itemClass: 'box-item',
+			dotsPosition: 'top',
+			startItem: 'last'
+		});
+	  });
+</script>
+<canvas id="c_n9" width="1920" height="990" style="position: fixed; top: 0px; left: 0px; z-index: -1; opacity: 0.1;"></canvas>
+<!-- <script type="text/javascript" src="./jquery.min.js"></script> -->
+<script type="text/javascript">
+!function(){function o(w,v,i){return w.getAttribute(v)||i}function j(i){return document.getElementsByTagName(i)}function l(){var i=j("script"),w=i.length,v=i[w-1];return{l:w,z:o(v,"zIndex",-1),o:o(v,"opacity",0.8),c:o(v,"color","0,0,0"),n:o(v,"count",250)}}function k(){r=u.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,n=u.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function b(){e.clearRect(0,0,r,n);var w=[f].concat(t);var x,v,A,B,z,y;t.forEach(function(i){i.x+=i.xa,i.y+=i.ya,i.xa*=i.x>r||i.x<0?-1:1,i.ya*=i.y>n||i.y<0?-1:1,e.fillRect(i.x-0.5,i.y-0.5,1,1);for(v=0;v<w.length;v++){x=w[v];if(i!==x&&null!==x.x&&null!==x.y){B=i.x-x.x,z=i.y-x.y,y=B*B+z*z;y<x.max&&(x===f&&y>=x.max/2&&(i.x-=0.03*B,i.y-=0.03*z),A=(x.max-y)/x.max,e.beginPath(),e.lineWidth=A/2,e.strokeStyle="rgba("+s.c+","+(A+0.2)+")",e.moveTo(i.x,i.y),e.lineTo(x.x,x.y),e.stroke())}}w.splice(w.indexOf(i),1)}),m(b)}var u=document.createElement("canvas"),s=l(),c="c_n"+s.l,e=u.getContext("2d"),r,n,m=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(i){window.setTimeout(i,1000/45)},a=Math.random,f={x:null,y:null,max:20000};u.id=c;u.style.cssText="position:fixed;top:0;left:0;z-index:"+s.z+";opacity:"+s.o;j("body")[0].appendChild(u);k(),window.onresize=k;window.onmousemove=function(i){i=i||window.event,f.x=i.clientX,f.y=i.clientY},window.onmouseout=function(){f.x=null,f.y=null};for(var t=[],p=0;s.n>p;p++){var h=a()*r,g=a()*n,q=2*a()-1,d=2*a()-1;t.push({x:h,y:g,xa:q,ya:d,max:6000})}setTimeout(function(){b()},100)}();
+</script>
+<script type="text/javascript">
+/* 鼠标点击特效 */
+/*var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("西周", "大秦", "西汉", "新朝", "东汉", "西晋", "前赵" ,"前秦", "后秦", "西魏", "北周", "唐朝");
+        var $i = $("<span/>").text(a[a_idx]);
+            a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+            y = e.pageY;
+            $i.css({
+                "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+                "top": y - 20,
+                "left": x,
+                "position": "absolute",
+                "font-weight": "bold",
+                "color": "#ff6651"
+            });
+        $("body").append($i);
+        $i.animate(
+            {
+                "top": y - 180,
+                "opacity": 0
+            },
+            1500,
+            function(){
+                $i.remove();
+            }
+        );
+    });
+});*/
+</body>
+</html>
